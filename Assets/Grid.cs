@@ -9,7 +9,7 @@ public class Grid : MonoBehaviour
     public GameObject tile;
 
 
-    Tile[,] grid;
+    public Tile[,] grid;
 
     private void Start()
     {

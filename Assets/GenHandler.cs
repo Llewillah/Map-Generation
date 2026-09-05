@@ -5,6 +5,7 @@ public class GenHandler : MonoBehaviour
     public Grid grid;
     public DrunkenWalk dW;
     public ModifiedDrunkenWalk mDW;
+    public CellularAutomota cA;
 
     bool gen = false;
 
@@ -12,6 +13,7 @@ public class GenHandler : MonoBehaviour
     {
         dW.SetUp(grid);
         mDW.SetUp(grid);
+        cA.SetUp(grid);
     }
 
     private void Update()
@@ -26,6 +28,7 @@ public class GenHandler : MonoBehaviour
     {
         grid.ResetGrid();
         //dW.TakeStep();
-        mDW.DoGen();
+        //mDW.DoGen();
+        cA.StartGen();
     }
 }
