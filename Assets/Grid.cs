@@ -20,6 +20,7 @@ public class Grid : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 grid[x, y] = SpawnTile(GetWorldPos(x, y));
+                grid[x, y].SetUp(x, y);
             }
         }
     }
@@ -44,32 +45,14 @@ public class Grid : MonoBehaviour
     }
     public Tile GetTile(int x, int y) 
     {
-        if (x >= width)
-        {
-            x = width - 1;
-        }
-        else if(x < 0) 
-        {
-            x = 0;
-        }
-
-        if (y >= height)
-        {
-            y = height - 1;
-        }
-        else if (y < 0)
-        {
-            y = 0;
-        }
-
         return grid[x, y];
     }
 
     public bool GetVisited(int x, int y) 
     {
-        if (x < 0 || x >= width || y < 0 || y > height) 
+        if (x < 0 || x >= width || y < 0 || y >= height) 
         {
-            return false;
+            return true;
         }
 
         return grid[x, y].visited;

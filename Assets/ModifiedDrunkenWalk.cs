@@ -16,18 +16,48 @@ public class ModifiedDrunkenWalk : MonoBehaviour
 
     public void DoGen() 
     {
+        //pick a random starting tile
         int curX = Random.Range(0, grid.width);
         int curY = Random.Range(0, grid.height);
 
         int curTiles = 0;
 
         Stack<Tile> stack = new Stack<Tile>();
-        stack.Push(grid.GetTile(curX, curY));
-        Tile cur;
 
+        //handle the first tile
+        Tile cur = grid.GetTile(curX, curY);
+        cur.visited = true;
+        cur.ChangeColour(Color.white);
+        curTiles++;
+        stack.Push(cur);
+        
         while (curTiles < totalTiles) 
         {
             cur = stack.Pop();
+            List<Tile> neighbours = new List<Tile>();
+            
+
+            //check if neghbours have been visited
+            foreach (Vector2Int dir in dirs) 
+            {
+                if (!grid.GetVisited(cur.x + dir.x, cur.y + dir.y)) 
+                {
+                    neighbours.Add(grid.GetTile(cur.x + dir.x, cur.y + dir.y));
+                }
+            }
+
+            //if any unvisited neghbours, remove wall and add it to the stack
+            if (neighbours.Count > 0)
+            {
+                int randInt = Random.Range(0, neighbours.Count);
+
+                stack.Push(cur);
+                stack.Push(neighbours[randInt]);
+                neighbours[randInt].visited = true;
+                neighbours[randInt].ChangeColour(Color.white);
+                curTiles++;
+                Debug.Log(curTiles);
+            }
         }
     }
 }
