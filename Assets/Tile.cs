@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    int x, y;
+    public int x, y;
+    public bool visited = false;
 
     public void SetUp(int x, int y) 
     {
