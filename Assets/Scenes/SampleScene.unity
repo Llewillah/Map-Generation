@@ -635,6 +635,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BinarySpacePartitioning
   minWidth: 8
   minHeight: 8
+  maxTrim: 4
+  dungeon: 0
+  viewPath: 1
 --- !u!4 &925690701
 Transform:
   m_ObjectHideFlags: 0
