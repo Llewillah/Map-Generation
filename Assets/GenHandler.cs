@@ -7,6 +7,7 @@ public class GenHandler : MonoBehaviour
     public ModifiedDrunkenWalk mDW;
     public CellularAutomota cA;
     public BinarySpacePartitioning bSP;
+    public RandomisedDepthFirstSearch rDFS;
 
     bool gen = false;
 
@@ -16,6 +17,7 @@ public class GenHandler : MonoBehaviour
         mDW.SetUp(grid);
         cA.SetUp(grid);
         bSP.SetUp(grid);
+        rDFS.SetUp(grid);
     }
 
     private void Update()
@@ -32,6 +34,7 @@ public class GenHandler : MonoBehaviour
         //dW.TakeStep();
         //mDW.DoGen();
         //cA.StartGen();
-        bSP.StartGen();
+        //bSP.StartGen();
+        rDFS.StartGen();
     }
 }
