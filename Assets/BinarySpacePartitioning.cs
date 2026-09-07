@@ -1,7 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEditor;
-using System.IO.Hashing;
 public class Room 
 { 
     //room bounds
@@ -184,7 +181,7 @@ public class BinarySpacePartitioning : MonoBehaviour
 
 
             //Draw a line between the rooms
-            Color pathCol = (viewPath) ? Color.red : Color.white;
+            Color pathCol = (viewPath) ? Color.white : Color.red;
 
             for (int x = x1; x < x2; x++) 
             {
