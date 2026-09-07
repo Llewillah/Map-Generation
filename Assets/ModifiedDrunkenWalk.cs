@@ -56,7 +56,6 @@ public class ModifiedDrunkenWalk : MonoBehaviour
                 neighbours[randInt].visited = true;
                 neighbours[randInt].ChangeColour(Color.white);
                 curTiles++;
-                Debug.Log(curTiles);
             }
         }
     }

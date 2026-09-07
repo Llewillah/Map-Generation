@@ -35,7 +35,7 @@ public class BinarySpacePartitioning : MonoBehaviour
     Grid grid;
     Room root;
     public bool dungeon = false;
-    public bool viewPath = true;
+    public bool viewPath = false;
 
     public void SetUp(Grid grid) 
     {
@@ -214,5 +214,15 @@ public class BinarySpacePartitioning : MonoBehaviour
             AddBorder(room.lRoom);
             AddBorder(room.rRoom);
         }
+    }
+
+    public void DungeonButton() 
+    {
+        dungeon = !dungeon;
+    }
+
+    public void ViewPathButton() 
+    { 
+        viewPath = !viewPath;
     }
 }
